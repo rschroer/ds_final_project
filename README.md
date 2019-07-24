@@ -22,15 +22,15 @@ Kaggle Microsoft Malware Pediction:
 
 
 ## Rough Presentation Outline
-1. Intro Screen - 15 seconds give project name, have group names, but don't spend time announcing roster
+1. Intro Screen `0:15`-  Give project name, have group names, but don't spend time announcing roster
 
-1. Exposition 1:45 - Describe the problem and how we picked it. This will match the baseline in Sean's story telling arc. Talk about what is being predicted or why.
+1. Exposition `1:45` - Describe the problem and how we picked it. This will match the baseline in Sean's story telling arc. Talk about what is being predicted or why.
 
-1. Exploratory Analysis 3:00 - Display the initial graphs of the data. Point out something interesting from one of the graphs that may seem counterintuitive. 
+1. Exploratory Analysis `3:00` - Display the initial graphs of the data. Point out something interesting from one of the graphs that may seem counterintuitive. 
 
-1. ML Discussion: 8:00 - Discuss the models picked, the tuning involved, what when well, what challenges we had.
+1. ML Discussion: `8:00` - Discuss the models picked, the tuning involved, what when well, what challenges we had.
 
-1. Wrap up: 1:00 Talk about weaknesses in the models, what findings we had and next steps
+1. Wrap up: `1:00` Talk about weaknesses in the models, what findings we had and next steps
 
 
 
