@@ -1,17 +1,17 @@
 # Final Project
-
+===
 ## Topic Considerations
-
+===
     1. NCR Data from Ticketing system
         * Clean Data
         * Predict time case was open with linear regression and if was in SLA with classification
 
     2. Kaggle Malware Pediction
-        * https://www.kaggle.com/c/microsoft-malware-prediction
+        * [https://www.kaggle.com/c/microsoft-malware-prediction]
         * Predict `HasDetections` based on other feathers
 
 ## Rough Project Outline
-
+===
     1. Pick Topic
     2. Get Data
     3. Clean Data
@@ -22,7 +22,7 @@
 
 
 ## Rough Presentation Outline
-
+===
     1. Intro Screen - 15 seconds give project name, have group names, but don't spend time announcing roster
 
     2. Exposition 1:45 - Describe the problem and how we picked it. This will match the baseline in Sean's story telling arc. Talk about what is being predicted or why.
