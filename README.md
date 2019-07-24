@@ -1,11 +1,11 @@
 # Final Project
 ## Topic Considerations
 
-### NCR Data from Ticketing system
+NCR Data from Ticketing system
     Clean Data
     Predict time case was open with linear regression and if was in SLA with classification
 
-### Kaggle Microsoft Malware Pediction
+Kaggle Microsoft Malware Pediction
     [Kaggle Link](https://www.kaggle.com/c/microsoft-malware-prediction)
     Predict `HasDetections` based on other feathers
 
