@@ -49,6 +49,6 @@ Windows 10 in S Mode is a more limited, locked-down Windows operating system. In
 
 __SmartScreen__
 
-SmartScreen is a modeule for internet explorer that is like safe browsing for Chrome.
+SmartScreen is a module for only internet explorer and only for Browser security.
 
 [Microsoft Documentation for smartscreen](https://support.microsoft.com/en-us/help/17443/windows-internet-explorer-smartscreen-filter-faq)
