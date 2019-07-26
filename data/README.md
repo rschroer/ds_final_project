@@ -13,7 +13,7 @@ To help the other members, I've documented some of the commands to get this up a
 `chmod 666 train.csv`
 
 1. Count the number of lines
-`1wc -l train.csv`
+`wc -l train.csv`
 
 Soo, yes, we have 8.9 million rows.
 
