@@ -19,6 +19,14 @@ Soo, yes, we have 8.9 million rows.
 
 ## Some Definitions of some features
 
+__EngineVersion__
+This is the core detection engine of the Defender. Think of this like "What can this thing to do detect malware?" Can it check the hash of a running process againstk known bad, check registry for run keys, or call batman?
+
+__AvSigVersion__
+This is the content that tells the engine if something is bad or not. This list of process hashes are bad, these registry keys are bad, or batman says these are malware. 
+
+__AppVersion__
+This is the app itself and may not be related to any engine or av. It includes UX components and integration features.
 
 __PuaMode__
 
