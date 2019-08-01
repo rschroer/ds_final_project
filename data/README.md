@@ -58,7 +58,12 @@ SmartScreen is a module for only internet explorer and only for Browser security
 ----------
 
 # Feature Suggestions
+
+### Use These Definitely
 `["EngineVersion","AVProductStatesIdentifier","AVProductsEnabled","Processor","SmartScreen","Census_MDC2FormFactor","Census_OSVersion","Census_IsAlwaysOnAlwaysConnectedCapable","Wdft_IsGamer"]`
+
+### May Be useful
+`["RtpStateBitfield","IsSxsPassiveMode","Census_HasOpticalDiskDrive","Census_IsVirtualDevice"]`
 
 Don't Use | Unknown | Use
 --- | --- | ---
