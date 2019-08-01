@@ -54,3 +54,83 @@ __SmartScreen__
 SmartScreen is a module for only internet explorer and only for Browser security.
 
 [Microsoft Documentation for smartscreen](https://support.microsoft.com/en-us/help/17443/windows-internet-explorer-smartscreen-filter-faq)
+
+----------
+
+# Feature Suggestions
+
+### Use These Definitely
+`["EngineVersion","AVProductStatesIdentifier","AVProductsEnabled","Processor","SmartScreen","Census_MDC2FormFactor","Census_OSVersion","Census_IsAlwaysOnAlwaysConnectedCapable","Wdft_IsGamer"]`
+
+### May Be useful
+`["RtpStateBitfield","IsSxsPassiveMode","Census_HasOpticalDiskDrive","Census_IsVirtualDevice"]`
+
+Don't Use | Unknown | Use
+--- | --- | ---
+ProductName | RtpStateBitfield |EngineVersion 
+AppVersion | IsSxsPassiveMode | AVProductStatesIdentifier
+AvSigVersion | Census_HasOpticalDiskDrive|AVProductsEnabled
+IsBeta |  Census_IsVirtualDevice | Processor
+DefaultBrowserIdentifier || SmartScreen
+AVProductsInstalled||Census_MDC2FormFactor
+HasTpm||Census_OSVersion
+CountryIdentifier||Census_IsAlwaysOnAlwaysConnectedCapable
+CityIdentifier||Wdft_IsGamer
+OrganizationIdentifier||
+GeoNameIdentifier||
+LocaleEnglishNameIdentifier||
+Platform||
+OsBuild||
+OsSuite||
+OsPlatformSubRelease||
+OsBuildLab||
+SkuEdition||
+IsProtected||
+AutoSampleOptIn||
+PuaMode||
+SMode||
+IeVerIdentifier||
+Firewall||
+UacLuaenable||
+Census_DeviceFamily||
+Census_OEMNameIdentifier||
+Census_OEMModelIdentifier||
+Census_ProcessorCoreCount||
+Census_ProcessorManufacturerIdentifier||
+Census_ProcessorModelIdentifier||
+Census_ProcessorClass||
+Census_PrimaryDiskTotalCapacity||
+Census_PrimaryDiskTypeName||
+Census_SystemVolumeTotalCapacity||
+Census_TotalPhysicalRAM||
+Census_ChassisTypeName||
+Census_InternalPrimaryDiagonalDisplaySizeInInches||
+Census_InternalPrimaryDisplayResolutionHorizontal||
+Census_InternalPrimaryDisplayResolutionVertical||
+Census_PowerPlatformRoleName||
+Census_InternalBatteryType||
+Census_InternalBatteryNumberOfCharges||
+Census_OSArchitecture||
+Census_OSBranch||
+Census_OSBuildNumber||
+Census_OSBuildRevision||
+Census_OSEdition||
+Census_OSSkuName||
+Census_OSInstallTypeName||
+Census_OSInstallLanguageIdentifier||
+Census_OSUILocaleIdentifier||
+Census_OSWUAutoUpdateOptionsName||
+Census_IsPortableOperatingSystem||
+Census_GenuineStateName||
+Census_ActivationChannel||
+Census_IsFlightingInternal||
+Census_IsFlightsDisabled||
+Census_FlightRing||
+Census_ThresholdOptIn||
+Census_FirmwareManufacturerIdentifier||
+Census_FirmwareVersionIdentifier||
+Census_IsSecureBootEnabled||
+Census_IsWIMBootEnabled||
+Census_IsTouchEnabled||
+Census_IsPenCapable||
+Wdft_RegionIdentifier||
