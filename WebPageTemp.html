@@ -64,22 +64,6 @@ body, html {
 <!-- Add a background color and large text to the whole page -->
 <div class="w3-sand w3-grayscale w3-large">
 
-<!-- About Container -->
-<div class="w3-container" id="about">
-  <div class="w3-content" style="max-width:700px">
-    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT OUR DATA</span></h5>
-    <p>Predicting the probability of a Windows machine getting infected by various families of malware, based off of different properties of the machine. The dataset uniquely identifies to a specific machine. Using the train.csv data we will try to predict the value for HasDections for each of the machines in the test.csv file.</p>
-    <p></p>
-    <img src="kaggleSee.png" alt="Kaggle" class="center" style="width:70%;max-width:700px" class="w3-margin-top" >
-    <div class="w3-panel w3-leftbar w3-light-grey">
-      <p><i>The data set was found on Kaggle</i></p>
-      <a href="https://www.kaggle.com/c/microsoft-malware-prediction/overview">Link to the Data Set!</a>
-    </div>
-    <p><strong>Variables Removed:</strong>Below we have listed the variables from the data that we removed and the reason for their removeal.</p>
-  </div>
-</div>
-
-
 <meta name="viewport" content="initial-scale=1">
 <style>
 .accordion {
@@ -127,36 +111,48 @@ body, html {
 }
 </style>
 
-<button class="accordion">blah blah blah (Step 1 or whatever)</button>
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT OUR DATA</span></h5>
+    <p>Predicting the probability of a Windows machine getting infected by various families of malware, based off of different properties of the machine. The dataset uniquely identifies to a specific machine. Using the train.csv data we will try to predict the value for HasDetections for each of the machines in the test.csv file.</p>
+    <p></p>
+    <img src="kaggleSee.png" alt="Kaggle" class="center" style="width:70%;max-width:700px" class="w3-margin-top" >
+    <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>The data set was found on Kaggle</i></p>
+      <a href="https://www.kaggle.com/c/microsoft-malware-prediction/overview">Link to the Data Set!</a>
+    </div>
+    <p><strong>Feature Definitions: </strong>Below we have listed the variables from the data that we removed and the reason for their removeal.</p>
+  </div>
+  <button class="accordion">blah blah blah (Step 2 or whatever)</button>
 <div class="panel">
   <p><br>Lorem ipsum dolor s ullamco laboris nisi ut aliquip ex ea commodo consequat.
 <br/>
 </p>
 </div>
+</div>
 
-<button class="accordion">blah blah blah (Step 2 or whatever)</button>
+<!-- Data cleaning Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">CLEANING THE DATA</span></h5>
+    <p>hh</p>
+    <p></p>
+    <!-- <img src="kaggleSee.png" alt="Kaggle" class="center" style="width:70%;max-width:700px" class="w3-margin-top" > -->
+    <!-- <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>The data set was found on Kaggle</i></p>
+      <a href="https://www.kaggle.com/c/microsoft-malware-prediction/overview">Link to the Data Set!</a>
+    </div> -->
+    <p><strong>Paragraph: </strong>Below we have listed the variables from the data that we removed and the reason for their removeal.</p>
+    <p><strong>Variables Removed:</strong>Below we have listed the variables from the data that we removed and the reason for their removeal.</p>
+  </div>
+  <button class="accordion">blah blah blah (Step 2 or whatever)</button>
 <div class="panel">
   <p><br>Lorem ipsum dolor s ullamco laboris nisi ut aliquip ex ea commodo consequat.
 <br/>
 </p>
 </div>
-
-<script>
-  var acc = document.getElementsByClassName("accordion");
-  var i;
-  
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight){
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      } 
-    });
-  }
-  </script>
+</div>
 
 <!-- Menu Container -->
 <div class="w3-container" id="menu">
@@ -249,6 +245,23 @@ function openMenu(evt, menuName) {
 }
 document.getElementById("myLink").click();
 </script>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight){
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
 
 </body>
 </html>
