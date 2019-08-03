@@ -55,6 +55,16 @@ SmartScreen is a module for only internet explorer and only for Browser security
 
 [Microsoft Documentation for smartscreen](https://support.microsoft.com/en-us/help/17443/windows-internet-explorer-smartscreen-filter-faq)
 
+__WindowsRTPState__
+RTP state is the Realtime protection state. It looks to be a bitwise combination of values.
+
+[Microsoft RTP documentation](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/troubleshoot-windows-defender-antivirus)
+
+__AVProductStatesIdentifier__
+This is a bitwise value that is a combination of individual settings for the endpoint solution. This includes if it's outdated, turned on, and automatically updated. 
+[Documentation on AVPProductStates](https://social.msdn.microsoft.com/Forums/en-US/6501b87e-dda4-4838-93c3-244daa355d7c/wmisecuritycenter2-productstate?forum=vblanguage)
+
+
 ----------
 
 # Feature Suggestions
