@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="favicon.ico"> 
-    <script src="app.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </head>
 <title>Machine Malware</title>
@@ -114,17 +114,18 @@ body, html {
 <!-- About Container -->
 <div class="w3-container" id="about">
   <div class="w3-content" style="max-width:700px">
-    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT OUR DATA</span></h5>
-    <p>Predicting the probability of a Windows machine getting infected by various families of malware, based off of different properties of the machine. The dataset uniquely identifies to a specific machine. Using the train.csv data we will try to predict the value for HasDetections for each of the machines in the test.csv file.</p>
+    <h3><strong>Infection Inspection:</strong>  Predicting the Probability of a Windows Machine Being Infected by Various Families of Malware.</h3>
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE DATA</span></h5>
+    <p>The data was obtained on Kaggle and was supplied by Microsoft. The data set is comprised of real data on millions of windows machines.  The supplied CSVs contain 83 columns and approximately 8.9 million rows.</p>
     <p></p>
     <img src="kaggleSee.png" alt="Kaggle" class="center" style="width:70%;max-width:700px" class="w3-margin-top" >
     <div class="w3-panel w3-leftbar w3-light-grey">
-      <p><i>The data set was found on Kaggle</i></p>
+      <p><i>The data set is available on Kaggle</i></p>
       <a href="https://www.kaggle.com/c/microsoft-malware-prediction/overview">Link to the Data Set!</a>
     </div>
-    <p><strong>Feature Definitions: </strong>Explaination of each of the coloumns in the data set.</p>
+    <p><strong>Feature Definitions: </strong>Explanation of each of the coloumns in the data set.</p>
   </div>
-  <button class="accordion">Features Expalined</button>
+  <button class="accordion">Click to Read More</button>
 <div class="panel">
   <p>
     <br><ul type='circle'>
@@ -221,10 +222,11 @@ body, html {
       <p></p>
       
       <div class="w3-panel w3-leftbar w3-light-grey">
-        <p><i>Goals:</i>
+        <p><i><strong>Goals:</strong></i>
           <ol>
-            <li>How to model the features that will identify which machines have malware?</li>
-            <li>Being able to predict the machines with effected malware.</li>
+            <li>Using the given information about a computer, how accurately can we predict whether or not malware will be detected on that machine?</li>
+            <li>Which machine learning techniques apply to this data set?</li>
+            <li>How do the different ML techniques compare?</li>
           </ol>
         </p>
         
@@ -235,19 +237,140 @@ body, html {
 <div class="w3-container" id="about">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">CLEANING THE DATA</span></h5>
-    <p>hh</p>
-    <p></p>
-    <!-- <img src="kaggleSee.png" alt="Kaggle" class="center" style="width:70%;max-width:700px" class="w3-margin-top" > -->
-    <!-- <div class="w3-panel w3-leftbar w3-light-grey">
-      <p><i>The data set was found on Kaggle</i></p>
-      <a href="https://www.kaggle.com/c/microsoft-malware-prediction/overview">Link to the Data Set!</a>
-    </div> -->
-    <p><strong>Paragraph: </strong>Below we have listed the variables from the data that we removed and the reason for their removeal.</p>
-    <p><strong>Variables Removed:</strong>Below we have listed the variables from the data that we removed and the reason for their removeal.</p>
+    <p>Although many features were provided, some data that could have been useful, such as forensic indicators and risky user behavior, were not included in this set.</p>
+    <p>Some fields had information that was duplicated in other fields.</p>
+    <p>Our first task was to understand what role each feature represented, how the features were related, and which features to include for our analysis.</p>
+    <br></br>
+    <img src="magnifying_glass_pic1.PNG" alt="Inspection" class="center" style="width:70%;max-width:700px" class="w3-margin-top" >
+    <br></br>
+    <p>After determining which features were worth including, we had to verify that the values for each feature were usable.</p>
+    <p>As pictured below, we calculated how many null values were in each column and plotted the ratios for a visualization of the contents of the data set.</p>
+    <p>After exploring the contents of the data set, we discovered that every feature in this set is categorical. This is important to note, as the lack of "continuous variables" will be a large factor in our choice of machine learning techniques.  Rather than removing rows or columns containing null values, we approached each feature on a case-by-case basis to determine whether one-hot encoding, label encoding, or binary encoding would be appropriate.  In some cases, we changed the data types in order to preserve ordinality for data that was not purely nominal.</p>
+    <p><i>Examples of feature engineering methods that were performed:</i>
+      <ol>
+        <li>changed NaNs in "PuaMode" to "off"</li>
+        <li>changed NaNs in Census_ProcessorClass to "None"</li>
+        <li>combined "Off" and "On" with "off" and "on"</li>
+        <li>changed NaNs in Wdft_IsGamer to "0"</li>
+        <li>changed NaNs in Census_IsFlightInternal to "1"</li>
+      </ol>
+    </p>
+    <br></br>
+    <div id="myDiv" style="width: 800px; height: 700px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+    <script src="static/js/app.js"></script>
+    <br></br>
+    <p><strong>Removed Features:</strong>Below we have listed the features from the data that we removed and the reason(s) for their removal.</p>
   </div>
-  <button class="accordion">blah blah blah (Step 2 or whatever)</button>
+  <button class="accordion">Click to Read More</button>
 <div class="panel">
-  <p><br>Lorem ipsum dolor s ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  <p><br>There are a few features that overlap completely or partially with others. They generally fall into several categories:</br><br>
+    
+    ### OS versioning Features</br><br>
+    
+    There were twelve different features in the dataset that all described the same thing. They all gave information about which version of Windows was installed. We chose Census_OSVersion as it was a combinatinon of OSVer, Census_OSBuild, and Census_OSBuildRevision. The other OS information could be derived from those numbers if needed, or substituted later.</br><br>
+    
+    Census_OSVersion,</br><br>
+    Platform, </br><br>
+    OSVer, </br><br>
+    OsBuild, </br><br>
+    OsSuite, </br><br>
+    OsPlatformSubRelease,</br><br> 
+    OsBuildLab*, </br><br>
+    SkuEdition, </br><br>
+    Census_OSBranch, </br><br>
+    Census_OSBuildNumber, </br><br>
+    Census_OSBuildRevision, </br><br>
+    Census_OSEdition,</br><br>
+    Census_OSSkuName,</br><br>
+    Census_OSInstallTypeName, </br><br>
+    Census_OSWUAutoUpdateOptionsName, </br><br>
+    Census_IsPortableOperatingSystem,</br><br>
+    Census_GenuineStateName,</br><br>
+    Census_ActivationChannel,</br><br>
+    Census_IsSecureBootEnabled,</br><br>
+    Census_IsWIMBootEnabled,</br><br>
+    
+    
+    \* Note that OSBuildLab also includes information that's in Hardware (Processor)</br><br>
+    
+    ### Hardware/Firmware Description Features</br><br>
+    A lot of these hardware configurations had overlapping values. Many of these other values are dependent on the hardware configurations. Because things like screen size, number of cores, and Total RAM can be related to the type and form factor, We simplified this category using that, then later compared it to select individual features such as Processor Core Count and Total RAM. Wdft_IsGamer is included here because it is based on the detection of a high powered video card. We included this as it was one of the few features that gave insight into user behavior.</br><br>
+    
+    Processor,</br><br>
+    Census_MDC2FormFactor,</br><br> 
+    Census_DeviceFamily, </br><br>
+    Census_OEMNameIdentifier, </br><br>
+    Census_OEMModelIdentifier, </br><br>
+    Census_ProcessorCoreCount, </br><br>
+    Census_ProcessorManufacturerIdentifier, </br><br>
+    Census_ProcessorModelIdentifier, </br><br>
+    Census_ProcessorClass, </br><br>
+    Census_PrimaryDiskTotalCapacity,</br><br> 
+    Census_PrimaryDiskTypeName, </br><br>
+    Census_SystemVolumeTotalCapacity, </br><br>
+    Census_TotalPhysicalRAM, </br><br>
+    Census_ChassisTypeName, </br><br>
+    Census_InternalPrimaryDiagonalDisplaySizeInInches, </br><br>
+    Census_InternalPrimaryDisplayResolutionHorizontal, </br><br>
+    Census_InternalPrimaryDisplayResolutionVertical, </br><br>
+    Census_PowerPlatformRoleName, </br><br>
+    Census_InternalBatteryType, </br><br>
+    Census_InternalBatteryNumberOfCharges,</br><br>
+    Census_FirmwareVersionIdentifier,</br><br>
+    Census_IsVirtualDevice,</br><br>
+    Census_IsTouchEnabled,</br><br>
+    Census_IsPenCapable,</br><br>
+    Census_IsAlwaysOnAlwaysConnectedCapable,</br><br>
+    and Wdft_IsGamer</br><br>
+    
+    ### Antivirus Components and Configuration Features</br><br>
+    AVProductStatesIdentifier was a bitwise composite number that included many of the Defender options. It was chosen. Additionally, the EngineVersion, AppVersion, and AVsigVersion all seemed to have some relation to each other.</br><br>
+    
+    ProductName, </br><br>
+    EngineVersion, </br><br>
+    AppVersion, </br><br>
+    AvSigVersion, </br><br>
+    IsBeta, </br><br>
+    RtpStateBitfield,</br><br> 
+    IsSxsPassiveMode, </br><br>
+    AVProductStatesIdentifier, </br><br>
+    AVProductsInstalled, </br><br>
+    AVProductsEnabled, </br><br>
+    HasTpm, </br><br>
+    IsProtected, </br><br>
+    AutoSampleOptIn, </br><br>
+    PuaMode, </br><br>
+    SMode, </br><br>
+    Firewall, </br><br>
+    and UacLuaenable</br><br>
+    
+    ### Browser Configuration Features</br><br>
+    
+    Which web browser was the default, what verion of it if it was Internet Explorer, and Internet Explorer settings that are equilavent to Google's safe browsing.</br><br>
+    
+    DefaultBrowsersIdentifier, </br><br>
+    IeVerIdentifier, </br><br>
+    and SmartScreen</br><br>
+    
+    ### Geographic/Customer Data Features</br><br>
+    The Geographic data did not have much signal in it, so it was excluded.</br><br>
+    
+    CountryIdentifier,</br><br>
+    CityIdentifier,</br><br>
+    OrganizationIdentifier,</br><br>
+    GeoNameIdentifier,</br><br>
+    LocaleEnglishNameIdentifier,</br><br>
+    Census_OSInstallLanguageIdentifier,</br><br>
+    Census_OSUILocaleIdentifier,</br><br>
+    and Wdft_RegionIdentifier</br><br>
+    
+    ### Unknown Windows Settings Features</br><br>
+    These features had a substantial amount of null values and a large number of skewed values.</br><br>
+    
+    Census_IsFlightingInternal,</br><br>
+    Census_IsFlightsDisabled,</br><br>
+    Census_FlightRing,</br><br>
+    and Census_ThresholdOptIn</br><br>
 <br/>
 </p>
 </div>
@@ -257,7 +380,7 @@ body, html {
 <div class="w3-container" id="menu">
   <div class="w3-content" style="max-width:700px">
  
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">ANALYTICS</span></h5>
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">MACHINE LEARNING</span></h5>
   
     <div class="w3-row w3-center w3-card w3-padding">
       <a href="javascript:void(0)" onclick="openMenu(event, 'RandomForest');" id="myLink">
@@ -275,22 +398,32 @@ body, html {
     </div>
 
     <div id="RandomForest" class="w3-container menu w3-padding-48 w3-card">
-        <p> This model was chosen for its robustness and the feature importance insight that it would give. Different iterations were done, where different features where encoded by different methods.
-          
-          1. The model was chosen for both its robustness and the feature importance insight that it would give.
-            2. I did different iterations in where I encoded different features using different methods. Specifically, for AVProductStates, I used one hot encoding for all of the numbers, I used it as an integer, and I did a binary conversion so that each of the 17 bitwise flags was represented as a separate column. There was marginal difference in this.
-            
-            Outcomes: Of all of the iterations and changing the encoding the different variables, there was not significant improvement in the model results.</p>
+        <p>1. This model was chosen for its robustness and the feature importance insight that it would give.<br></br>
+            2. Different iterations were done, where different features where encoded by different methods.  Specifically, for AVProductStates, we used one hot encoding for all of the numbers, we also used it as an integer, and also did a binary conversion so that each of the 17 bitwise flags was represented as a separate column. This produced only a marginal improvement.<br></br>
+            Outcome: Of all of the iterations and changing the encoding of different variables, there was not significant improvement in the model results.</p>
+            <br></br>
+    <img src="feature_importance.png" alt="feature_importance" class="center" style="width:100%;max-width:900px" class="w3-margin-top" >
     </div>
       <div id="LogisticalRegression" class="w3-container menu w3-padding-48 w3-card">
-          <p>Logistical Regression</p>
+          <p>1. Since Logistical Regression is the appropriate regression analysis to conduct when the dependent variable is dichotomous (binary).  Logistic regression is used to describe data and to explain the relationship between one dependent binary variable and one or more nominal, ordinal, interval or ratio-level independent variables.<br></br>
+              2. We used MinMaxScaler from sklearn to scale and translate each feature individually such that it was in the given range on the training set, e.g. between zero and one.<br></br>
+              Outcome: Accuracy 59%, according to the standard it is not a great model for prediction.</p>
+              <br></br>
+            <img src="five_by_five_signal_test.PNG" alt="five_by_five" class="center" style="width:100%;max-width:900px" class="w3-margin-top" >
+            In a process known as "testing for a signal" variables are graphed against one-another to look for correlation.
     </div> 
     <div id="NaiveBayes" class="w3-container menu w3-padding-48 w3-card">
-        <p>Naive Bayes</p>
-
+        <p>1. Since the results of the dependent variable ("HasDetections") is given, this is a Supervised Learning problem.  Naive Bayes is ideal for Supervised Learning problems with more than 3 features and the underlying assumption of independence between features seems reasonable from calculating the correlation matrix across all features.<br></br>
+            2. The standard Gaussian classifier only produced 58% accuracy, but after applying the Bernoulli, Multinomial, and Complement classifiers, we discovered that 60%  accuracy was obtained from the Multinomial Naive Bayes model.</p>
+            <br></br>
+            <img src="12_features_heatmap.PNG" alt="heatmap_of_features" class="center" style="width:100%;max-width:900px" class="w3-margin-top" >
       </div>
         <div id="RidgeClassifierCV" class="w3-container menu w3-padding-48 w3-card">
-            <p>Ridge Classifier CV</p>
+            <p>Ridge Classifier CV
+
+            </p>
+            <br></br>
+            <img src="models_and_scores.png" alt="Ridge_Classifier_Winner" class="center" style="width:100%;max-width:900px" class="w3-margin-top" >
       </div> 
   </div>
 </div>
