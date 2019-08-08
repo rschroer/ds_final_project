@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+<title>Machine Malware</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("SkullMalware.jpg");
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#about" class="w3-button w3-block w3-black">ABOUT THE DATA</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#menu" class="w3-button w3-block w3-black">MACHINE LEARNING</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#where" class="w3-button w3-block w3-black">THE TEAM</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag">Who is next?</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:90px">Machine<br>Malware</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white">Protect Yourself</span>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<meta name="viewport" content="initial-scale=1">
+<style>
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 12px;
+    background-color: white;
+    max-height: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h3><strong>Infection Inspection:</strong>  Predicting the Probability of a Windows Machine Being Infected by Various Families of Malware.</h3>
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE DATA</span></h5>
+    <p>The data was obtained on Kaggle and was supplied by Microsoft. The data set is comprised of real data on millions of windows machines.  The supplied CSVs contain 83 columns and approximately 8.9 million rows.</p>
+    <p></p>
+    <img src="kaggleSee.png" alt="Kaggle" class="center" style="width:70%;max-width:700px" class="w3-margin-top" >
+    <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>The data set is available on Kaggle</i></p>
+      <a href="https://www.kaggle.com/c/microsoft-malware-prediction/overview">Link to the Data Set!</a>
+    </div>
+    <p><strong>Feature Definitions: </strong>Explanation of each of the coloumns in the data set.</p>
+  </div>
+  <button class="accordion">Click to Read More</button>
+<div class="panel">
+  <p>
+    <br><ul type='circle'>
+      <li>MachineIdentifier - Individual machine ID</li>
+      <li>ProductName - Defender state information e.g. win8defender</li>
+      <li>EngineVersion - Defender state information e.g. 1.1.12603.0</li>
+      <li>AppVersion - Defender state information e.g. 4.9.10586.0</li>
+      <li>AvSigVersion - Defender state information e.g. 1.217.1014.0</li>
+      <li>IsBeta - Defender state information e.g. 1.217.1014.0</li>
+      <li>RtpStateBitfield - NA</li>
+      <li>IsSxsPassiveMode - NA</li>
+      <li>DefaultBrowsersIdentifier - ID for the machine's default browser</li>
+      <li>AVProductStatesIdentifier - ID for the specific configuration of a user's antivirus software</li>
+      <li>AVProductsInstalled - NA</li>
+      <li>AVProductsEnabled - NA</li>
+      <li>HasTpm - True if machine has tpm</li>
+      <li>CountryIdentifier - ID for the country the machine is located in</li>
+      <li>CityIdentifier - ID for the city the machine is located in</li>
+      <li>OrganizationIdentifier - ID for the organization the machine belongs in, organization ID is mapped to both specific companies and broad industries</li>
+      <li>GeoNameIdentifier - ID for the geographic region a machine is located in</li>
+      <li>LocaleEnglishNameIdentifier - English name of Locale ID of the current user</li>
+      <li>Platform - Calculates platform name (of OS related properties and processor property)</li>
+      <li>Processor - This is the process architecture of the installed operating system</li>
+      <li>OsVer - Version of the current operating system</li>
+      <li>OsBuild - Build of the current operating system</li>
+      <li>OsSuite - Product suite mask for the current operating system</li>
+      <li>OsPlatformSubRelease - Returns the OS Platform sub-release (Windows Vista, Windows 7, Windows 8, TH1, TH2)</li>
+      <li>OsBuildLab - Build lab that generated the current OS. Example: 9600.17630.amd64fre.winblue_r7.150109-2022</li>
+      <li>SkuEdition - The goal of this feature is to use the Product Type defined in the MSDN to map to a 'SKU-Edition' name that is useful in population reporting. The valid Product Type are defined in %sdxroot%\data\windowseditions.xml. This API has been used since Vista and Server 2008, so there are many Prouct Types that do not apply to Windows 10. The 'SKU-Edition' is a string value that is in one of three classes of results. The design must hand each class</li>
+      <li>IsProtected - This is a calculated field derived from the Spynet Report's AV Products field. Returns: a. TRUE if there is at least one active and up-to-date antivirus product running on this machine. b. FALSE if there is no active AV product on this machine, or if the AV is active, but is not receiving the latest updates. c. null if there are no Anti Virus Products in the report. Returns: Whether a machine is protected</li>
+      <li>AutoSampleOptIn - This is the SubmitSamplesConsent value passed in from the service, available on CAMP 9+</li>
+      <li>PuaMode - Pua Enabled mode from the service</li>
+      <li>SMode - This field is set to true when the device is known to be in 'S Mode', as in, Windows 10 S mode, where only Microsoft Store apps can be installed</li>
+      <li>IeVerIdentifier - NA</li>
+      <li>SmartScreen - This is the SmartScreen enabled string value from registry. This is obtained by checking in order, HKLM\SOFTWARE\Policies\Microsoft\Windows\System\SmartScreenEnabled and HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\SmartScreenEnabled. If the value exists but is blank, the value "ExistsNotSet" is sent in telemetry</li>
+      <li>Firewall - This attribute is true (1) for Windows 8.1 and above if windows firewall is enabled, as reported by the service</li>
+      <li>UacLuaenable - This attribute reports whether or not the "administrator in Admin Approval Mode" user type is disabled or enabled in UAC. The value reported is obtained by reading the regkey HKLM\SOFTWARE\Mictosoft\Windows\CurrentVersion\Policies\System\EnableLUA</li>
+      <li>Census_MDC2FormFactor - A grouping based on a combination of Device Census level hardware characteristics. The logic used to define Form Factor is rooted in business and industry standards and aligns with how people think about their device. (Examples: Smartphone, Small Tablet, All in One, Convertible...)</li>
+      <li>Census_DeviceFamily - AKA DeviceClass. Indicates the type of device that an edition of the OS is intended for. Example values: Windows.Desktop, Windows.Mobile, and iOS.Phone</li>
+      <li>Census_OEMNameIdentifier - NA</li>
+      <li>Census_OEMModelIdentifier - NA</li>
+      <li>Census_ProcessorCoreCount - Number of logical cores in the processor</li>
+      <li>Census_ProcessorManufacturerIdentifier - NA</li>
+      <li>Census_ProcessorModelIdentifier - NA</li>
+      <li>Census_ProcessorClass - A classification of processors into high/medium/low. Initially used for Pricing Level SKU. No longer maintained and updated</li>
+      <li>Census_PrimaryDiskTotalCapacity - Amount of disk space on primary disk of the machine in MB</li>
+      <li>Census_PrimaryDiskTypeName - Friendly name of Primary Disk Type - HDD or SSD</li>
+      <li>Census_SystemVolumeTotalCapacity - The size of the partition that the System volume is installed on in MB</li>
+      <li>Census_HasOpticalDiskDrive - True indidicates that the machine has an optical disk drive (CD/DVD)</li>
+      <li>Census_TotalPhysicalRAM - Retrieves the Physical RAM in MB</li>
+      <li>Census_ChassisTypeName - Retrieves a numeric representation of what type of chassis the machine has. A value of 0 means xx</li>
+      <li>Census_InternalPrimaryDiagonalDisplaySizeInInches - Retrieves the physical diagonal length in inches of the primary display</li>
+      <li>Census_InternalPrimaryDisplayResolutionHorizontal - Retrieves the number of pixels in the horizontal direction of the internal display.</li>
+      <li>Census_InternalPrimaryDisplayResolutionVertical - Retrieves the number of pixels in the vertical direction of the internal display</li>
+      <li>Census_PowerPlatformRoleName - Indicates the OEM preferred power management profile. This value helps identify the basic form factor of the device</li>
+      <li>Census_InternalBatteryType - NA</li>
+      <li>Census_InternalBatteryNumberOfCharges - NA</li>
+      <li>Census_OSVersion - Numeric OS version Example - 10.0.10130.0</li>
+      <li>Census_OSArchitecture - Architecture on which the OS is based. Derived from OSVersionFull. Example - amd64</li>
+      <li>Census_OSBranch - Branch of the OS extracted from the OsVersionFull. Example - OsBranch = fbl_partner_eeap where OsVersion = 6.4.9813.0amd64fre.fbl_partner_eeap.140810-0005</li>
+      <li>Census_OSBuildNumber - OS build number extracted from the OsVersionFull. Example - OsBuildNumber = 10512 or 10240</li>
+      <li>Census_OSBuildRevision - OS Build revision extracted from the OsVersionFull. Example - OsBuildRevision = 1000 or 16458</li>
+      <li>Census_OSEdition - Edition of the current OS. Sourced from HKLM\Software\Microsoft\WindowsNT\CurrentVersion@EditionID in registry. Example: Enterprise</li>
+      <li>Census_OSSkuName - OS edition friendly name (currently Windows only)</li>
+      <li>Census_OSInstallTypeName - Friendly description of what install was used on the machine i.e. clean</li>
+      <li>Census_OSInstallLanguageIdentifier - NA</li>
+      <li>Census_OSUILocaleIdentifier - NA</li>
+      <li>Census_OSWUAutoUpdateOptionsName - Friendly name of the WindowsUpdate auto-update settings on the machine.</li>
+      <li>Census_IsPortableOperatingSystem - Indicates whether OS is booted up and running via Windows-To-Go on a USB stick.</li>
+      <li>Census_GenuineStateName - Friendly name of OSGenuineStateID. 0 = Genuine</li>
+      <li>Census_ActivationChannel - Retail lincense key or Valume license key for a machine</li>
+      <li>Census_IsFlightInternal - NA</li>
+      <li>Census_IsFlightsDisabled - Indicates if the machine is participating in flighting</li>
+      <li>Census_FlightRing - The ring that the device user would like to receive flight for. This might be different from the ring of the OS which is currentlyinstalled if the user changes the ring after getting a flight from a different ring</li>
+      <li>Census_thresholdOptIn - NA</li>
+      <li>Census_FirmwareManufacturerIdentifier - NA</li>
+      <li>Census_FirmwareVersionIdentifier - NA</li>
+      <li>Census_IsSecureBootEnabled - Indicates if Secure Boot mode is enabled.</li>
+      <li>Census_IsWIMBootEnabled - NA</li>
+      <li>Census_IsVirtualDevice - Identifies a Virtual Machine (machine learning model)</li>
+      <li>Census_IsTouchEnabled - Is this a touch device?</li>
+      <li>Census_IsPenCapable - Is the device capable of pen input?</li>
+      <li>Census_IsAlwaysOnAlwaysConnectedCapable - Retreives information about whether the battery enables the device to be AlwaysOnAlwaysConnected.</li>
+      <li>Wdft_IsGamer - Indicates whether the device is a gamer device or not based on its hardware combination.</li>
+      <li>Wdft_RegionIdentifier - NA</li>
+      </ul>
+    <br/>
+
+</p>
+</div>
+<div class="w3-container" id="about">
+    <div class="w3-content" style="max-width:700px">
+      <p></p>
+      <p></p>
+      
+      <div class="w3-panel w3-leftbar w3-light-grey">
+        <p><i><strong>Goals:</strong></i>
+          <ol>
+            <li>Using the given information about a computer, how accurately can we predict whether or not malware will be detected on that machine?</li>
+            <li>Which machine learning techniques apply to this data set?</li>
+            <li>How do the different ML techniques compare?</li>
+          </ol>
+        </p>
+        
+      </div>
+</div>
+
+<!-- Data cleaning Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">CLEANING THE DATA</span></h5>
+    <p>Although many features were provided, some data that could have been useful, such as forensic indicators and risky user behavior, were not included in this set.</p>
+    <p>Some fields had information that was duplicated in other fields.</p>
+    <p>Our first task was to understand what role each feature represented, how the features were related, and which features to include for our analysis.</p>
+    <br></br>
+    <img src="magnifying_glass_pic1.PNG" alt="Inspection" class="center" style="width:70%;max-width:700px" class="w3-margin-top" >
+    <br></br>
+    <p>After determining which features were worth including, we had to verify that the values for each feature were usable.</p>
+    <p>As pictured below, we calculated how many null values were in each column and plotted the ratios for a visualization of the contents of the data set.</p>
+    <p>After exploring the contents of the data set, we discovered that every feature in this set is categorical. This is important to note, as the lack of "continuous variables" will be a large factor in our choice of machine learning techniques.  Rather than removing rows or columns containing null values, we approached each feature on a case-by-case basis to determine whether one-hot encoding, label encoding, or binary encoding would be appropriate.  In some cases, we changed the data types in order to preserve ordinality for data that was not purely nominal.</p>
+    <p><i>Examples of feature engineering methods that were performed:</i>
+      <ol>
+        <li>changed NaNs in "PuaMode" to "off"</li>
+        <li>changed NaNs in Census_ProcessorClass to "None"</li>
+        <li>combined "Off" and "On" with "off" and "on"</li>
+        <li>changed NaNs in Wdft_IsGamer to "0"</li>
+        <li>changed NaNs in Census_IsFlightInternal to "1"</li>
+      </ol>
+    </p>
+    <br></br>
+    <div id="myDiv" style="width: 800px; height: 700px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+    <script src="static/js/app.js"></script>
+    <br></br>
+    <p><strong>Removed Features:</strong>Below we have listed the features from the data that we removed and the reason(s) for their removal.</p>
+  </div>
+  <button class="accordion">Click to Read More</button>
+<div class="panel">
+  <p><br>There are a few features that overlap completely or partially with others. They generally fall into several categories:</br><br>
+    
+    ### OS versioning Features</br><br>
+    
+    There were twelve different features in the dataset that all described the same thing. They all gave information about which version of Windows was installed. We chose Census_OSVersion as it was a combinatinon of OSVer, Census_OSBuild, and Census_OSBuildRevision. The other OS information could be derived from those numbers if needed, or substituted later.</br><br>
+    
+    Census_OSVersion,</br><br>
+    Platform, </br><br>
+    OSVer, </br><br>
+    OsBuild, </br><br>
+    OsSuite, </br><br>
+    OsPlatformSubRelease,</br><br> 
+    OsBuildLab*, </br><br>
+    SkuEdition, </br><br>
+    Census_OSBranch, </br><br>
+    Census_OSBuildNumber, </br><br>
+    Census_OSBuildRevision, </br><br>
+    Census_OSEdition,</br><br>
+    Census_OSSkuName,</br><br>
+    Census_OSInstallTypeName, </br><br>
+    Census_OSWUAutoUpdateOptionsName, </br><br>
+    Census_IsPortableOperatingSystem,</br><br>
+    Census_GenuineStateName,</br><br>
+    Census_ActivationChannel,</br><br>
+    Census_IsSecureBootEnabled,</br><br>
+    Census_IsWIMBootEnabled,</br><br>
+    
+    
+    \* Note that OSBuildLab also includes information that's in Hardware (Processor)</br><br>
+    
+    ### Hardware/Firmware Description Features</br><br>
+    A lot of these hardware configurations had overlapping values. Many of these other values are dependent on the hardware configurations. Because things like screen size, number of cores, and Total RAM can be related to the type and form factor, We simplified this category using that, then later compared it to select individual features such as Processor Core Count and Total RAM. Wdft_IsGamer is included here because it is based on the detection of a high powered video card. We included this as it was one of the few features that gave insight into user behavior.</br><br>
+    
+    Processor,</br><br>
+    Census_MDC2FormFactor,</br><br> 
+    Census_DeviceFamily, </br><br>
+    Census_OEMNameIdentifier, </br><br>
+    Census_OEMModelIdentifier, </br><br>
+    Census_ProcessorCoreCount, </br><br>
+    Census_ProcessorManufacturerIdentifier, </br><br>
+    Census_ProcessorModelIdentifier, </br><br>
+    Census_ProcessorClass, </br><br>
+    Census_PrimaryDiskTotalCapacity,</br><br> 
+    Census_PrimaryDiskTypeName, </br><br>
+    Census_SystemVolumeTotalCapacity, </br><br>
+    Census_TotalPhysicalRAM, </br><br>
+    Census_ChassisTypeName, </br><br>
+    Census_InternalPrimaryDiagonalDisplaySizeInInches, </br><br>
+    Census_InternalPrimaryDisplayResolutionHorizontal, </br><br>
+    Census_InternalPrimaryDisplayResolutionVertical, </br><br>
+    Census_PowerPlatformRoleName, </br><br>
+    Census_InternalBatteryType, </br><br>
+    Census_InternalBatteryNumberOfCharges,</br><br>
+    Census_FirmwareVersionIdentifier,</br><br>
+    Census_IsVirtualDevice,</br><br>
+    Census_IsTouchEnabled,</br><br>
+    Census_IsPenCapable,</br><br>
+    Census_IsAlwaysOnAlwaysConnectedCapable,</br><br>
+    and Wdft_IsGamer</br><br>
+    
+    ### Antivirus Components and Configuration Features</br><br>
+    AVProductStatesIdentifier was a bitwise composite number that included many of the Defender options. It was chosen. Additionally, the EngineVersion, AppVersion, and AVsigVersion all seemed to have some relation to each other.</br><br>
+    
+    ProductName, </br><br>
+    EngineVersion, </br><br>
+    AppVersion, </br><br>
+    AvSigVersion, </br><br>
+    IsBeta, </br><br>
+    RtpStateBitfield,</br><br> 
+    IsSxsPassiveMode, </br><br>
+    AVProductStatesIdentifier, </br><br>
+    AVProductsInstalled, </br><br>
+    AVProductsEnabled, </br><br>
+    HasTpm, </br><br>
+    IsProtected, </br><br>
+    AutoSampleOptIn, </br><br>
+    PuaMode, </br><br>
+    SMode, </br><br>
+    Firewall, </br><br>
+    and UacLuaenable</br><br>
+    
+    ### Browser Configuration Features</br><br>
+    
+    Which web browser was the default, what verion of it if it was Internet Explorer, and Internet Explorer settings that are equilavent to Google's safe browsing.</br><br>
+    
+    DefaultBrowsersIdentifier, </br><br>
+    IeVerIdentifier, </br><br>
+    and SmartScreen</br><br>
+    
+    ### Geographic/Customer Data Features</br><br>
+    The Geographic data did not have much signal in it, so it was excluded.</br><br>
+    
+    CountryIdentifier,</br><br>
+    CityIdentifier,</br><br>
+    OrganizationIdentifier,</br><br>
+    GeoNameIdentifier,</br><br>
+    LocaleEnglishNameIdentifier,</br><br>
+    Census_OSInstallLanguageIdentifier,</br><br>
+    Census_OSUILocaleIdentifier,</br><br>
+    and Wdft_RegionIdentifier</br><br>
+    
+    ### Unknown Windows Settings Features</br><br>
+    These features had a substantial amount of null values and a large number of skewed values.</br><br>
+    
+    Census_IsFlightingInternal,</br><br>
+    Census_IsFlightsDisabled,</br><br>
+    Census_FlightRing,</br><br>
+    and Census_ThresholdOptIn</br><br>
+<br/>
+</p>
+</div>
+</div>
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">MACHINE LEARNING</span></h5>
+  
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'RandomForest');" id="myLink">
+        <div class="w3-col s6 tablink">Random Forest</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'LogisticalRegression');">
+        <div class="w3-col s6 tablink">Logistical Regression</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'NaiveBayes');" id="myLink">
+          <div class="w3-col s6 tablink">Naive Bayes</div>
+        </a>
+        <a href="javascript:void(0)" onclick="openMenu(event, 'RidgeClassifierCV');">
+          <div class="w3-col s6 tablink">Ridge Classifier CV</div>
+        </a>
+    </div>
+
+    <div id="RandomForest" class="w3-container menu w3-padding-48 w3-card">
+        <p>1. This model was chosen for its robustness and the feature importance insight that it would give.<br></br>
+            2. Different iterations were done, where different features where encoded by different methods.  Specifically, for AVProductStates, we used one hot encoding for all of the numbers, we also used it as an integer, and also did a binary conversion so that each of the 17 bitwise flags was represented as a separate column. This produced only a marginal improvement.<br></br>
+            Outcome: Of all of the iterations and changing the encoding of different variables, there was not significant improvement in the model results.</p>
+            <br></br>
+    <img src="feature_importance.png" alt="feature_importance" class="center" style="width:100%;max-width:900px" class="w3-margin-top" >
+    </div>
+      <div id="LogisticalRegression" class="w3-container menu w3-padding-48 w3-card">
+          <p>1. Since Logistical Regression is the appropriate regression analysis to conduct when the dependent variable is dichotomous (binary).  Logistic regression is used to describe data and to explain the relationship between one dependent binary variable and one or more nominal, ordinal, interval or ratio-level independent variables.<br></br>
+              2. We used MinMaxScaler from sklearn to scale and translate each feature individually such that it was in the given range on the training set, e.g. between zero and one.<br></br>
+              Outcome: Accuracy 59%, according to the standard it is not a great model for prediction.</p>
+              <br></br>
+            <img src="five_by_five_signal_test.PNG" alt="five_by_five" class="center" style="width:100%;max-width:900px" class="w3-margin-top" >
+            In a process known as "testing for a signal" variables are graphed against one-another to look for correlation.
+    </div> 
+    <div id="NaiveBayes" class="w3-container menu w3-padding-48 w3-card">
+        <p>1. Since the results of the dependent variable ("HasDetections") is given, this is a Supervised Learning problem.  Naive Bayes is ideal for Supervised Learning problems with more than 3 features and the underlying assumption of independence between features seems reasonable from calculating the correlation matrix across all features.<br></br>
+            2. The standard Gaussian classifier only produced 58% accuracy, but after applying the Bernoulli, Multinomial, and Complement classifiers, we discovered that 60%  accuracy was obtained from the Multinomial Naive Bayes model.</p>
+            <br></br>
+            <img src="12_features_heatmap.PNG" alt="heatmap_of_features" class="center" style="width:100%;max-width:900px" class="w3-margin-top" >
+      </div>
+        <div id="RidgeClassifierCV" class="w3-container menu w3-padding-48 w3-card">
+          <p>After running a loop through twenty different classification models. Out of the 20 models, Ridge Classification CV scored the highest.<br></br>
+            Outcome: This resulted in our best accuracy score at just under 62%.</p>
+            <br></br>
+            <img src="models_and_scores.png" alt="Ridge_Classifier_Winner" class="center" style="width:100%;max-width:900px" class="w3-margin-top" >
+      </div> 
+  </div>
+</div>
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:800px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE TEAM</span></h5>
+    <ul class="ch-grid">
+        <li>
+          <div class="ch-item ch-img-1">
+            <div class="ch-info">
+              <h3>Robert Schroer</h3>
+              <p>Find me on GitHub <a href="https://github.com/rschroer">Click Here</a></p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="ch-item ch-img-2">
+            <div class="ch-info">
+              <h3>Krishna Tatineni</h3>
+              <p>Find me on GitHub <a href="https://github.com/ktatineni">Click Here</a></p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="ch-item ch-img-3">
+            <div class="ch-info">
+              <h3>Navneet Gupta</h3>
+              <p>Find me on GitHub <a href="http://drbl.in/ekhp">Click Here</a></p>
+            </div>
+          </div>
+        </li>
+        <li>
+            <div class="ch-item ch-img-4">
+              <div class="ch-info">
+                <h3>Daniel Mihok</h3>
+                <p>Find me on GitHub <a href="http://drbl.in/ekhp">Click Here</a></p>
+              </div>
+            </div>
+          </li>
+          <li>
+              <div class="ch-item ch-img-5">
+                <div class="ch-info">
+                  <h3>Huda <br>
+                    Awad</h3>
+                  <p>Find me on GitHub <a href="https://github.com/HuDaBosss">Click Here</a></p>
+                </div>
+              </div>
+            </li>
+            <li>
+                <div class="ch-item ch-img-6">
+                  <div class="ch-info">
+                    <h3>Dipika Kumar</h3>
+                    <p>Find me on GitHub <a href="http://drbl.in/ekhp">Click Here</a></p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                  <div class="ch-item ch-img-7">
+                    <div class="ch-info">
+                      <h3>Krishan </h3>
+                      <p>Find me on GitHub <a href="http://drbl.in/ekhp">Click Here</a></p>
+                    </div>
+                  </div>
+                </li>
+      </ul>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  </footer>
+ 
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight){
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
+
+</body>
+</html>
