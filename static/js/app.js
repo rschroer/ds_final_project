@@ -125,7 +125,7 @@
 // <div id="chartdiv"></div>
 
 function makeplot() {
-  Plotly.d3.csv("https://raw.githubusercontent.com/mihokdanny/allhomeworks/master/features_and_null_percents.csv", function(data){ processData(data) } );
+  Plotly.d3.csv("https://raw.githubusercontent.com/rschroer/ds_final_project/master/data/features_and_null_percents.csv", function(data){ processData(data) } );
 
 };
  
